@@ -19480,7 +19480,7 @@ var select = document.getElementById("move-select");
 //populating select list
 for(index in BattleMovedex) {
 	var move = BattleMovedex[index]
-	if ((move.basePower > 0) && (move.secondary != null) ){
+	if ((move.basePower > 0) && (move.secondary != null) && (move.secondary.chance<100) ){
     select.options[select.options.length] = new Option(move.name, move.secondary.chance, move.accuracy);
 	}
 
