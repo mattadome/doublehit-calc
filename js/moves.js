@@ -19476,6 +19476,8 @@ var BattleMovedex = {
 
 var index;
 var select = document.getElementById("move-select");
+
+//populating select list
 for(index in BattleMovedex) {
 	var move = BattleMovedex[index]
 	if ((move.basePower > 0) && (move.secondary != null) ){
@@ -19485,17 +19487,33 @@ for(index in BattleMovedex) {
 }
 
 document.getElementById('move-select').addEventListener("change", vibeCheck)
+document.getElementById('sereneGrace').addEventListener("change", vibeCheck)
+
 
 function vibeCheck(event){
 
 let moveSelect = document.getElementById("move-select").value;
-console.log('vibe check is a success');
-console.log(Object.values(moveSelect));
+//console.log('vibe check is a success'); debug code
+//console.log(Object.values(moveSelect)); debug code
 
 var probDec = moveSelect/100;
-var calcTwice = (probDec**2)*100;
-var calcAtLeastOnce =  ((probDec * (1 - probDec))+(probDec*(1-probDec))+(probDec**2))*100;
-var calcNever = (100-calcAtLeastOnce)
+
+//serene grace modifier
+if (document.getElementById("sereneGrace").checked == true ){
+	probDec *=2;
+}
+
+var calcTwiceRaw = ((probDec**2)*100);
+var calcAtLeastOnceRaw =  (((probDec * (1 - probDec))+(probDec*(1-probDec))+(probDec**2))*100) ;
+var calcNeverRaw = (100-calcAtLeastOnceRaw);
+
+
+
+var calcTwice = Math.round(calcTwiceRaw);
+var calcAtLeastOnce = Math.round(calcAtLeastOnceRaw);
+var calcNever = Math.round(calcNeverRaw);
+
+
 
 document.getElementById('txt-twicerow').value = calcTwice + "%";
 document.getElementById('txt-atleastonce').value = calcAtLeastOnce + "%";
