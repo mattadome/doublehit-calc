@@ -13,37 +13,37 @@
 
 </head>
 
-<body>
+<body class = "container-fluid">
 
-	 <header> <img src="images/bite.jpg" alt="vibe check">
-	 	<h1>"Some call it getting Bite flinched by Kangaskhan. I call it getting vibe checked by James Evans"
-        <h3> View the (very bad) source code <a href="https://github.com/mattadome/doublehit-calc">here</a> </h3>
+	 <header> <img src="images/bite.jpg" alt="vibe check"><br> <img src ="images/kang used bite 2.jpg">
+	 	<h1>"Some call it getting Bite flinched by Kangaskhan. I call it getting vibe checked by James Evans"</h1>
+        
         <br> <br> 
      </header>
 	 
 
 <form class="calcprob" id="calcprob">
 	 
-	 <div class="container" id ="selectmoves">
+	 <div class="container-fluid" id ="selectmoves">
                         <label for="move-select">Move:</label>
                         <select class="browser-default custom-select" id="move-select">
                         </select>
                     </div>
-                    <div class ="container checkbox" id = "sereneGraceModifier">
+                    <div class ="container-fluid checkbox" id = "sereneGraceModifier">
                         <label><input type="checkbox" id = "sereneGrace" value="">Serene Grace</label>
                     </div>
                     </form>
 
 
-<div class ="container" id ="calculation">
+<div class ="container-fluid" id ="calculation">
                     <h3> Probablities of Secondary Effect</h3>
                     <p>
                     <label for= "txt-twicerow">Twice in a Row</label> 
-                    <input type="text" class = "form-control  col-sm" id="txt-twicerow" placeholder="">
+                    <input type="text" class = "form-control  " id="txt-twicerow" placeholder="">
                     <label for= "txt-atleastonce">At Least Once</label>
-                    <input type="text" class = "form-control  col-sm"  id="txt-atleastonce" placeholder="">
+                    <input type="text" class = "form-control "  id="txt-atleastonce" placeholder="">
                     <label for= "txt-never">Never</label>
-                    <input type="text" class = "form-control  col-sm"  id="txt-never" placeholder="">
+                    <input type="text" class = "form-control "  id="txt-never" placeholder="">
                     </p></div>
 
 
@@ -53,11 +53,16 @@
 
 </body>
 
+
+
+
+
 <footer>
-Made by @mattadome
+Made by mattadome
 <br>
 Move data taken from <a href="https://github.com/Zarel/Pokemon-Showdown" >Pokemon Showdown! source code</a>
-
+<br>
+View the (very bad) source code <a href="https://github.com/mattadome/doublehit-calc">here</a>
 </footer>
 <script src="js/calculator.js"></script>
 <script src="js/moves.js"></script>

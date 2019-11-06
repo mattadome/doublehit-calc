@@ -19500,6 +19500,10 @@ var probDec = moveSelect/100;
 
 //serene grace modifier
 if (document.getElementById("sereneGrace").checked == true ){
+
+	if (probDec > 0.5){
+		probDec = 0.5
+	}
 	probDec *=2;
 }
 
