@@ -19481,11 +19481,13 @@ var select = document.getElementById("move-select");
 for(index in BattleMovedex) {
 	var move = BattleMovedex[index]
 	if ((move.basePower > 0) && (move.secondary != null) && (move.secondary.chance<100) ){
-    select.options[select.options.length] = new Option(move.name, move.secondary.chance, move.accuracy);
+    select.options[select.length] = new Option(move.name, move.secondary.chance);
 	}
 
 }
 
+
+/*
 document.getElementById('move-select').addEventListener("change", vibeCheck)
 document.getElementById('sereneGrace').addEventListener("change", vibeCheck)
 
@@ -19500,10 +19502,6 @@ var probDec = moveSelect/100;
 
 //serene grace modifier
 if (document.getElementById("sereneGrace").checked == true ){
-
-	if (probDec > 0.5){
-		probDec = 0.5
-	}
 	probDec *=2;
 }
 
@@ -19528,3 +19526,4 @@ document.getElementById('txt-never').value = calcNever + "%";
 
 }
 
+*/
